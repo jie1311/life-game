@@ -1,9 +1,18 @@
 <h1>{{title}}</h1>
-<a (click)="reset()">Reset</a>
-<a (click)="next()">Next</a>
-<a (click)="next100()">Next 100</a>
-<table>
-  <tr *ngFor="let col of game.status">
-    <td *ngFor="let ele of col" class="tab-ele" [ngStyle]="{'background': ele === 1 ? 'black' : 'white'}"></td>
-  </tr>
-</table>
+<div (click)="next()">
+  <table>
+    <tr *ngFor="let col of game.status">
+      <td *ngFor="let ele of col" class="tab-ele" [ngStyle]="{'background': ele === 1 ? 'black' : 'white'}"></td>
+    </tr>
+  </table>
+</div>
+<div>
+  <p class="centerText tab-text">
+    <a (click)="reset()">Reset</a> |
+    <a (click)="next()">Next</a> |
+    <a (click)="play()">Play</a> |
+    <a (click)="stop()">Stop</a>
+    {{tag}}
+  </p>
+</div>
+
