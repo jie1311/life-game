@@ -8,17 +8,26 @@ import {Game} from './game';
 })
 
 export class AppComponent {
-  title = 'Life Game';
   game: Game;
   playTag: any;
 
   constructor() {
+    this.initGame();
+  }
+
+  initGame() {
     this.game = new Game(80, 80);
+    this.stop();
+  }
+
+  initMaze() {
+    this.game = null;
+    this.stop();
   }
 
   reset(): void {
     this.game.reset();
-    clearInterval(this.playTag);
+    this.stop();
   }
 
   play(): void {
@@ -29,6 +38,7 @@ export class AppComponent {
 
   next(): void {
     this.game.next();
+    this.stop();
   }
 
   stop(): void {

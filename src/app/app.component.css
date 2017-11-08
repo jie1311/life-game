@@ -1,9 +1,66 @@
-.tab-ele {
-  height: 0.4em !important;
-  width: 0.4em !important;
-  border: black !important;
+.game-out {
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
 }
 
-.tab-text {
-  width: 32em !important;
+.game-content {
+  width: 80vmin;
+  display: inline-block;
+}
+
+.game-div {
+  height: 80vmin;
+  width: 80vmin;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.game-row {
+  height: 1vmin;
+  width: 80vmin;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  line-height: 0;
+}
+
+.game-ele {
+  height: 1vmin;
+  width: 1vmin;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.game-svg {
+  height: 1vmin;
+  width: 1vmin;
+}
+
+.content {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 50px;
+  padding-bottom: 15px;
+  margin: 0;
+  border: 0;
+}
+
+.text-content {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 0;
+  border: 0;
+}
+
+.text-btn {
+  width: 45%;
+}
+
+.text-btn-out {
+  text-align: center;
 }
