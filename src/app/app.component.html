@@ -11,11 +11,12 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="{{ lifegame ? 'active' : ''}}"><a (click)="initLifegame()">Conway's Game of Life</a></li>
-        <li><a (click)="initMiner()">Reset</a></li>
+        <li class="{{ miner ? 'active' : ''}}"><a (click)="initMiner()">Miner</a></li>
       </ul>
     </div>
   </div>
 </nav>
 <div>
   <app-lifegame [game]="lifegame" *ngIf="lifegame"></app-lifegame>
+  <app-miner [game]="miner" *ngIf="miner"></app-miner>
 </div>

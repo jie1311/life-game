@@ -1,0 +1,69 @@
+.game-out {
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.game-content {
+  width: 80vmin;
+  display: inline-block;
+}
+
+.game-div {
+  height: 80vmin;
+  width: 80vmin;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.game-row {
+  height: 5vmin;
+  width: 80vmin;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  line-height: 0;
+}
+
+.game-ele {
+  height: 5vmin;
+  width: 5vmin;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.game-svg-back {
+  height: 5vmin;
+  width: 5vmin;
+  stroke: grey;
+}
+
+.game-svg-text {
+  tab-size: 2vmin;
+}
+
+.game-svg-mask {
+  height: 5vmin;
+  width: 5vmin;
+  stroke: black;
+  fill: grey;
+}
+
+.text-content {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 0;
+  border: 0;
+}
+
+.text-btn-out {
+  text-align: center;
+}
+
+.text-btn {
+  width: 45%;
+}

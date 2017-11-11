@@ -42,10 +42,6 @@ export class LifeGame {
     this._playTag = value;
   }
 
-  private getRandomStatus(): number {
-    return Math.floor(Math.random() * 2);
-  }
-
   init(): void {
     this._status = [];
     for (let i = 0; i < this._height; i++) {
@@ -79,6 +75,10 @@ export class LifeGame {
   nextOne(): void {
     this.next();
     this.stop();
+  }
+
+  private getRandomStatus(): number {
+    return Math.floor(Math.random() * 2);
   }
 
   private next(): void {

@@ -1,0 +1,50 @@
+<div class="container-fluid content">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="game-out">
+        <div class="game-content">
+          <div class="game-div">
+            <div class="game-row" *ngFor="let col of game.hintMap">
+              <svg class="game-ele" *ngFor="let ele of col">
+                <g>
+                  <rect class="game-svg-back" x="0" y="0" rx="5" ry="5"
+                        [ngStyle]="{'fill': ele.hint === 9 ? 'red' : 'lightgrey'}"/>
+                  <text class="game-svg-text" x="2vmin" y="3vmin">{{ele.hint}}</text>
+                  <rect class="game-svg-mask" x="0" y="0" rx="5" ry="5"
+                        [ngStyle]="{'opacity': ele.clicked ? '0' : '1', 'fill': ele.marked ? 'orange' : 'grey'}"
+                        (click)="clickUnit(ele)"
+                        (dblclick)="doubleClickUnit(ele)"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="text-content">
+        <h3>Miner</h3>
+        <div class="row">
+          <div class="col-md-6 text-btn-out">
+            <button type="button" class="btn text-btn" (click)="game.reset()">RESET</button>
+          </div>
+          <div class="col-md-6 text-btn-out">
+          </div>
+        </div>
+        <h4 *ngIf="game.winTag === 2">
+          You Lost!
+        </h4>
+        <h4 *ngIf="game.winTag === 1">
+          You Win!
+        </h4>
+        <h4>Rules</h4>
+        <ul>
+          <li>placeholder</li>
+          <li>placeholder</li>
+          <li>placeholder</li>
+          <li>placeholder</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
