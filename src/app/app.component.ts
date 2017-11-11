@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Game} from './game';
+import {LifeGame} from './lifegame';
 
 @Component({
   selector: 'app-root',
@@ -8,40 +8,17 @@ import {Game} from './game';
 })
 
 export class AppComponent {
-  game: Game;
-  playTag: any;
+  lifegame: LifeGame;
 
   constructor() {
-    this.initGame();
+    this.initLifegame();
   }
 
-  initGame() {
-    this.game = new Game(80, 80);
-    this.stop();
+  initLifegame(): void {
+    this.lifegame = new LifeGame(80, 80);
   }
 
-  initMaze() {
-    this.game = null;
-    this.stop();
-  }
-
-  reset(): void {
-    this.game.reset();
-    this.stop();
-  }
-
-  play(): void {
-    this.playTag = setInterval(() => {
-      this.game.next();
-    }, 0);
-  }
-
-  next(): void {
-    this.game.next();
-    this.stop();
-  }
-
-  stop(): void {
-    clearInterval(this.playTag);
+  initMiner(): void {
+    this.lifegame = null;
   }
 }

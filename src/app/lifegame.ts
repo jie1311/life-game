@@ -1,7 +1,8 @@
-export class Game {
+export class LifeGame {
   private _height: number;
   private _width: number;
   private _status: any[];
+  private _playTag: any;
 
   constructor(height: number, width: number) {
     this._height = height;
@@ -33,6 +34,14 @@ export class Game {
     this._status = value;
   }
 
+  get playTag(): any {
+    return this._playTag;
+  }
+
+  set playTag(value: any) {
+    this._playTag = value;
+  }
+
   private getRandomStatus(): number {
     return Math.floor(Math.random() * 2);
   }
@@ -45,6 +54,7 @@ export class Game {
         this._status[i][j] = this.getRandomStatus();
       }
     }
+    this.stop();
   }
 
   reset(): void {
@@ -53,9 +63,25 @@ export class Game {
         this._status[i][j] = this.getRandomStatus();
       }
     }
+    this.stop();
   }
 
-  next(): void {
+  play(): void {
+    this.playTag = setInterval(() => {
+      this.next();
+    }, 0);
+  }
+
+  stop(): void {
+    clearInterval(this.playTag);
+  }
+
+  nextOne(): void {
+    this.next();
+    this.stop();
+  }
+
+  private next(): void {
     const newStatus = [];
     for (let i = 0; i < this._height; i++) {
       newStatus[i] = [];
