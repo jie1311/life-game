@@ -116,7 +116,7 @@ export class Miner {
     }
   }
 
-  click(unit: Unit): void {
+  open(unit: Unit): void {
     if (!unit.clicked && !unit.marked && this._winTag === 0) {
       unit.clicked = true;
       if (unit.hint === 9) {
@@ -125,42 +125,42 @@ export class Miner {
         const i = unit.cordI;
         const j = unit.cordJ;
         try {
-          this.click(this._hintMap[i - 1][j - 1]);
+          this.open(this._hintMap[i - 1][j - 1]);
         } catch (e) {
 
         }
         try {
-          this.click(this._hintMap[i - 1][j]);
+          this.open(this._hintMap[i - 1][j]);
         } catch (e) {
 
         }
         try {
-          this.click(this._hintMap[i - 1][j + 1]);
+          this.open(this._hintMap[i - 1][j + 1]);
         } catch (e) {
 
         }
         try {
-          this.click(this._hintMap[i][j - 1]);
+          this.open(this._hintMap[i][j - 1]);
         } catch (e) {
 
         }
         try {
-          this.click(this._hintMap[i][j + 1]);
+          this.open(this._hintMap[i][j + 1]);
         } catch (e) {
 
         }
         try {
-          this.click(this._hintMap[i + 1][j - 1]);
+          this.open(this._hintMap[i + 1][j - 1]);
         } catch (e) {
 
         }
         try {
-          this.click(this._hintMap[i + 1][j]);
+          this.open(this._hintMap[i + 1][j]);
         } catch (e) {
 
         }
         try {
-          this.click(this._hintMap[i + 1][j + 1]);
+          this.open(this._hintMap[i + 1][j + 1]);
         } catch (e) {
 
         }
@@ -169,7 +169,7 @@ export class Miner {
     }
   }
 
-  doubleClick(unit: Unit): void {
+  mark(unit: Unit): void {
     if (!unit.clicked && this._winTag === 0) {
       unit.marked = !unit.marked;
       this.checkWin();

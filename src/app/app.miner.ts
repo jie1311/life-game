@@ -19,7 +19,7 @@ export class AppMinerComponent {
 
     this.timer = setTimeout(() => {
       if (!this.preventSimpleClick && this.game.winTag === 0) {
-        this.game.click(unit);
+        this.game.mark(unit);
       }
     }, delay);
 
@@ -29,7 +29,7 @@ export class AppMinerComponent {
     this.preventSimpleClick = true;
     clearTimeout(this.timer);
     if (this.game.winTag === 0) {
-      this.game.doubleClick(unit);
+      this.game.open(unit);
     }
   }
 }
